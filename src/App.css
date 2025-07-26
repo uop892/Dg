@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.row {
+  display: flex;
+}
+.header {
+  width: 100%;
+  background-color: #fff; /* Adjust background color as needed */
+}
+
+.add-info {
+  display: none; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Optional padding for aesthetics */
+  background-color: #2980b9;
+}
+
+.add-info-loc {
+  flex: 0 0 75%; /* Cover 75% of the width */
+}
+
+.add-info-soc {
+  flex: 0 0 25%; /* Cover 25% of the width */
+  display: flex; /* Use flex for social icons */
+  justify-content: flex-end; /* Align social icons to the right */
+}
+
+.add-info-loc ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  display: flex; /* Use flex to arrange items in a row */
+  justify-content: space-around; /* Space items evenly */
+}
+
+.add-info-loc ul li {
+  display: flex; /* Use flex for list items */
+  align-items: center; /* Center icons and text vertically */
+  color: #ffffff;
+}
+
+.add-info-loc li i {
+  margin-right: 5px; /* Space between icon and text */
+  color: white; /* Icon color */
+}
+
+.add-info-soc a {
+  margin-left: 10px; /* Space between social icons */
+  color: #ffffff; /* Icon color */
+  font-size: 20px; /* Adjust icon size */
+}
+
+.add-info-soc a {
+  padding: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.add-info-soc a:hover {
+  color: #f3c112;
+}
+
+@media (min-width: 768px) {
+  .add-info {
+    display: flex; /* Show on medium and large screens */
+  }
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  width: 100%;
+}
+
+.logo-section img {
+  width: 100%;
+  border-bottom: 1px inset rgb(63, 60, 60);
+}
+
+@media (min-width: 992px) {
+  .logo-section {
+    height: 120px;
+  }
+
+  .logo-section img {
+    height: 120px;
+  }
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 30px;
+  transition: top 0.3s;
+}
+/* Fixed class applied when navbar is fixed */
+.fixed {
+  position: fixed; /* Keep it fixed */
+  top: 0; /* Position it at the top */
+  left: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-grow: 1;
+  position: sticky;
+}
+
+.nav-links > li {
+  margin-right: 20px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-links a {
+  display: block;
+  padding: 15px 20px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #f3c112;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #2980b9;
+  padding: 0 10px;
+  list-style-type: none;
+  z-index: 1;
+}
+
+.nav-links li:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  color: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #f3c112;
+}
+
+.dropdown li a:hover {
+  color: #f3c112;
+  border-bottom: 1px solid #f3c112;
+  border-top: 1px solid #f3c112;
+}
+
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+/* Login Section */
+.login {
+  position: absolute;
+  right: 100px;
+}
+
+.login a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+  padding: 5px;
+  transition: 0.5s all ease;
+}
+
+.login a:hover {
+  color: #f3c112;
+}
+
+.login button {
+  background-color: #2980b9;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: #ffffff;
+  margin-left: 10px;
+  transition: 0.3s all ease;
+}
+
+.login button:hover {
+  color: #f3c112;
+  opacity: 0.9;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 75%;
+    background-color: #ffffff;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links {
+    display: none; /* Hide by default */
+  }
+
+  .nav-links.open {
+    display: block; /* Show when open */
+  }
+
+  .menu-toggle {
+    cursor: pointer; /* Change cursor to pointer */
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+  }
+
+  .login {
+    top: 50px;
+    right: 20px;
+    color: #000000;
+  }
+}
+
+/* Home Section */
+
+/* Footer */
+.footer {
+  background-color: #2980b9;
+  padding: 40px 10%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer > div {
+  flex: 1;
+  margin: 10px;
+}
+
+.ft-tt {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.ft-logo {
+  flex: 0 0 20%; /* Cover 20% width */
+}
+
+.ft-logo img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px;
+}
+
+.ft-text {
+  flex: 0 0 80%; /* Cover 80% width */
+  text-align: left; /* Align text to the left */
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer p,
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #d1f2eb;
+  padding: 5px;
+}
+
+.footer p span {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer-link a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: #bdc3c7;
+  padding: 5px;
+  font-size: 20px;
+  transition: 0.3s all ease;
+}
+
+.footer-link a:hover {
+  color: #f3c112;
+}
+
+.contacts li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.contacts i {
+  padding: 5px;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer > div {
+    margin: 10px 0;
+  }
+}
+
+.links a {
+  text-align: center;
+  text-decoration: none;
+  color: #d1f2eb;
+  transition: 0.3s all ease;
+}
+
+.links a:hover {
+  color: #f3c112;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ft-logo,
+  .ft-text {
+    text-align: center;
+  }
+}
+.bg-bl {
+  background-color: #4886ff;
+}
+.bg-yl {
+  background-color: #f3c112;
+}
+.cl-pn {
+  color: #f3c112;
+}
+.cl-bl {
+  color: #2980b9;
+}
+.cl-yl {
+  color: #003366;
+}
+.bg-bc {
+  background: linear-gradient(to right, #062440, #111830);
+}
+.bg-img {
+  background-image: url(/images/bg-1.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
