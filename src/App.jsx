@@ -8,7 +8,7 @@ import {
 import { Toaster } from "react-hot-toast";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { Layout } from "./Components/Layout/Layout";
-import { LoginForm } from "./components/Auth/LoginForm";
+import { LoginForm } from "./Components/Auth/LoginForm";
 import { Home } from "./Components/Pages/Home";
 import { About } from "./Components/Pages/About";
 import { Contact } from "./Components/Pages/Contact";
